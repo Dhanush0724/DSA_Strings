@@ -1,0 +1,21 @@
+class Solution:
+    def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+        
+        maps = {}
+        
+        words = re.findall(r'\w+', paragraph.lower())
+        
+        for char in words:
+            maps[char] = maps.get(char,0)+1
+        maxi = 0
+        res = ''
+        for word,count in maps.items():
+            if word not in banned and count>maxi:
+                maxi = count
+                res = word
+        return res
+            
+        
+        
+        
+        
