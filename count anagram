@@ -1,0 +1,23 @@
+dictionary = ["enlist", "cat", "dog", "listen", "horse", "listen","silent"]
+s = "silent"
+count = 0
+char = [0]*26
+for ch in s :
+    char[ord(ch)-ord('a')]+=1
+for word in dictionary:
+    level = [0]*26
+    for ch in word:         
+        level[ord(ch)-ord('a')]+=1
+    if char == level:
+        count+=1
+print(count)
+        
+# char = "".join(sorted(s.lower()))
+
+# count = 0
+# for word in dictionary:
+#     key = ''.join(sorted(word.lower()))
+#     if char == key:
+#         count+=1
+# print(count)
+#O.k lok k
