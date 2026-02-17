@@ -9,6 +9,16 @@ class Solution:
             res.append(s[-k:])
             s = s[:-k]
         return "-".join(res[::-1])
+
+
+
+        s = s.replace("-","").upper()
+        res = []
+       
+        for i in range(len(s),0,-k):
+            res.append(s[max(0,i-k):i])
+        return "-".join(reversed(res))
+
         
         
 
