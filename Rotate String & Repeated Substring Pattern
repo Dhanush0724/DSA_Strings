@@ -1,0 +1,33 @@
+
+
+Example 1:
+
+Input: s = "abcde", goal = "cdeab"
+Output: true
+Example 2:
+
+Input: s = "abcde", goal = "abced"
+Output: false
+ 
+class Solution:
+    def rotateString(self, s: str, goal: str) -> bool:
+
+        # for i in range(len(s)):
+        #     g = s[i+1:] + s[:i+1]
+        #     if g == goal:
+        #         return True
+        # return False
+
+        return len(s) == len(goal) and goal in s+s
+
+
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        return s in (s + s)[1:-1]
+
+        
+
+        
+        
+        
+
