@@ -1,0 +1,49 @@
+class Solution:
+    def maskPII(self, s: str) -> str:
+
+        if '@' in s:
+            s = s.lower()
+            name,domain = s.split('@')
+            return f"{name[0]}*****{name[-1]}@{domain}"
+        else :
+            phone =[c for c in s if c.isdigit()]
+            local = "***-***-"+"".join(phone[-4:])
+            country_code = len(phone)-10
+            if country_code > 0:
+                return '+'+'*'*country_code+'-'+local
+            return local
+        
+        # res = ''
+        # if "@" in s:
+        #     s = s.lower()
+        #     idx = 0
+        #     res+=s[idx]
+        #     idx = s.index("@")
+        #     res+='*****'
+        #     res+=s[idx-1]
+        #     res+=s[idx:]
+        # else :
+        #     phone = ""
+        #     for num in s:
+        #         if num.isalnum():
+        #             phone+=num
+        #     if len(phone) == 11:
+        #         res+="+*-"
+        #     elif len(phone) == 12:
+        #         res+="+**-"
+        #     elif len(phone) == 13 :
+        #         res+="+***-"
+        #     res+="***-***-"
+        #     res+=phone[-4:]
+
+        # return res
+
+            
+            
+        
+        
+
+        
+        
+
+        
